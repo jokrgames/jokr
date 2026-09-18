@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--
+  The hosted privacy policy for JOKR, for the URL the Play Console asks for.
+
+  Standalone on purpose: no build step, no fonts or scripts fetched from
+  anywhere, so it renders the same wherever it is dropped. The text is kept in
+  step with docs/PRIVACY.md — change both together.
+
+  Before publishing, replace PRIVACY_CONTACT_EMAIL below with a real address.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy — JOKR</title>
+<meta name="description" content="Privacy policy for JOKR (Joker Kiske Paas?), the Android card game.">
+<style>
+  :root {
+    --marigold: #F59E0B;
+    --marigold-deep: #D97706;
+    --indigo-deep: #1E1B4B;
+    --ink: #24202e;
+    --muted: #5c5769;
+    --rule: #e7e1d8;
+    --page: #FDF6E8;
+    --card: #FFFBF2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #f3efe7;
+      --muted: #b2abbd;
+      --rule: #383153;
+      --page: #15122f;
+      --card: var(--indigo-deep);
+      --marigold-deep: #FBBF24;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #f3efe7;
+    --muted: #b2abbd;
+    --rule: #383153;
+    --page: #15122f;
+    --card: var(--indigo-deep);
+    --marigold-deep: #FBBF24;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 44rem; margin: 0 auto; padding: 0 16px 5rem; }
+
+  header {
+    padding: 3rem 0 2rem;
+    border-bottom: 3px solid var(--marigold);
+    margin-bottom: 2.5rem;
+  }
+  .brand {
+    display: flex; align-items: center; gap: .6rem;
+    font-weight: 800; letter-spacing: .12em; font-size: .85rem;
+    color: var(--marigold-deep); text-transform: uppercase;
+  }
+  h1 { font-size: clamp(1.7rem, 6vw, 2.4rem); line-height: 1.15; margin: .6rem 0 .4rem; }
+  .updated { color: var(--muted); font-size: .95rem; margin: 0; }
+
+  h2 {
+    font-size: 1.25rem; margin: 2.5rem 0 .75rem;
+    padding-top: 1.5rem; border-top: 1px solid var(--rule);
+  }
+  h2:first-of-type { border-top: 0; padding-top: 0; }
+  p, li { color: var(--ink); }
+  a { color: var(--marigold-deep); }
+
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--marigold);
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+    margin: 0 0 1rem;
+  }
+  .lede strong { font-size: 1.05rem; }
+
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .96rem; }
+  th, td { text-align: left; padding: .6rem .7rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
+
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand"><span aria-hidden="true">🃏</span> JOKR</div>
+  <h1>Privacy policy</h1>
+  <p class="updated">Joker Kiske Paas? &middot; <code>in.jokr.jokerkiskepaas</code> &middot; Last updated 18 September 2026</p>
+</header>
+
+<p class="lede"><strong>JOKR does not collect any personal data.</strong>
+It has no accounts, no sign-in, no analytics, no crash reporting, no advertising
+and no purchases of any kind. Nothing you do in the app is sent anywhere.</p>
+
+<h2>What the app stores, and where</h2>
+<p>Everything JOKR saves stays on your device, in the app's own private storage,
+and is deleted when you uninstall the app. Nothing here is transmitted.</p>
+<table>
+  <thead><tr><th>What</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td>Your display name and chosen avatar</td><td>So the game can address you by name</td></tr>
+    <tr><td>Preferences — sound, haptics, game speed, theme, default mode and player count</td><td>So the app opens the way you left it</td></tr>
+    <tr><td>Game statistics — games played, games survived, streaks</td><td>The stats strip on the home screen</td></tr>
+    <tr><td>A server address, if you change it from the default</td><td>So you do not have to retype it</td></tr>
+  </tbody>
+</table>
+<p>The display name is free text you type yourself. Nothing checks who you are,
+and you are free to enter anything.</p>
+
+<h2>What the app sends</h2>
+<p><strong>Nothing.</strong> This version of JOKR plays entirely on your device —
+passing one phone around, or against the built-in computer opponents. It makes
+no network requests at all.</p>
+<p>The app declares the Android <code>INTERNET</code> permission because online
+play is built and will be switched on in a later version. Until then the
+permission is unused.</p>
+
+<h2>If online play is switched on later</h2>
+<p>A future version will let you play with friends over the internet. This policy
+will be updated before that ships, but for transparency, this is what that mode
+is built to send to the game server, and nothing else:</p>
+<ul>
+  <li>the display name you chose,</li>
+  <li>the avatar you chose,</li>
+  <li>the room code you created or joined,</li>
+  <li>your moves in the game.</li>
+</ul>
+<p>No email address, no phone number, no contacts, no location, no files, no
+advertising identifier and no device identifier. Rooms are held only while the
+game is being played and expire automatically a few hours afterwards.</p>
+
+<h2>Advertising, analytics and payments</h2>
+<p>There are none. JOKR contains no advertising SDK, no analytics or telemetry
+SDK, no crash-reporting SDK, and no in-app purchases or other payments. The app
+has no virtual currency, no wagering and no real-money element of any kind.</p>
+
+<h2>Children</h2>
+<p>JOKR is a family card game. Because it collects no personal data from anyone,
+it collects none from children either.</p>
+
+<h2>Your choices</h2>
+<ul>
+  <li><strong>Clearing what is stored:</strong> uninstalling the app removes
+    everything it has saved. Android's <em>Settings → Apps → JOKR → Storage →
+    Clear data</em> does the same without uninstalling.</li>
+  <li><strong>Requesting deletion:</strong> there is nothing held about you to
+    delete — no account exists and no data leaves your device.</li>
+</ul>
+
+<h2>Changes to this policy</h2>
+<p>If this policy changes, the date at the top of this page changes with it, and
+the updated policy is published at the same address.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="mailto:PRIVACY_CONTACT_EMAIL">PRIVACY_CONTACT_EMAIL</a></p>
+
+<footer>JOKR — Joker Kiske Paas? &middot; A no-stakes card game. No data collected.</footer>
+
+</div>
+</body>
+</html>
