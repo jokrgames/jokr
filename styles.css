@@ -1,0 +1,242 @@
+/*
+  Shared styles for the Jokr Games site — index.html, jokr.html, seepify.html.
+
+  No build step, no CDN, no webfonts, no JavaScript. System fonts only, so the
+  pages render the same everywhere and cost one request each.
+
+  The :root block below is a VERBATIM COPY of privacy-policy.html lines 18-45.
+  That file is deliberately standalone — it has to stay byte-identical to
+  ../jokerkiskepaas/store/privacy-policy.html so the Play Console URL and the
+  app repo's copy never diverge — which is why the palette lives in two places.
+  Change a value here and make the same change there; new tokens get APPENDED
+  below the copied block, never edited into it, so a diff of the two stays empty.
+*/
+  :root {
+    --marigold: #F59E0B;
+    --marigold-deep: #D97706;
+    --indigo-deep: #1E1B4B;
+    --ink: #24202e;
+    --muted: #5c5769;
+    --rule: #e7e1d8;
+    --page: #FDF6E8;
+    --card: #FFFBF2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #f3efe7;
+      --muted: #b2abbd;
+      --rule: #383153;
+      --page: #15122f;
+      --card: var(--indigo-deep);
+      --marigold-deep: #FBBF24;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #f3efe7;
+    --muted: #b2abbd;
+    --rule: #383153;
+    --page: #15122f;
+    --card: var(--indigo-deep);
+    --marigold-deep: #FBBF24;
+  }
+
+/* --- Appended: tokens the policy page does not need ---------------------- */
+:root {
+  /* --marigold-deep (#D97706) is only ~2.8:1 on the cream page background, so
+     links and kickers use this instead. #9A3412 is ~6.8:1. */
+  --accent-text: #9A3412;
+  --cta-bg: #F59E0B;
+  --cta-fg: #1E1B4B;
+  --shade: rgba(0, 0, 0, .05);
+  --seep-felt-hi: #1D7A5B;
+  --seep-felt-lo: #0A3A2A;
+  --seep-accent-text: #8C6A20;
+  --seep-ink-on-felt: #F4F1E6;
+  --seep-gold: #C8A24A;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --accent-text: #FBBF24;
+    --shade: rgba(255, 255, 255, .06);
+    --seep-accent-text: #F2DC9B;
+  }
+}
+:root[data-theme="dark"] {
+  --accent-text: #FBBF24;
+  --shade: rgba(255, 255, 255, .06);
+  --seep-accent-text: #F2DC9B;
+}
+
+/* Seepify's page keeps the same layout and swaps only the accent. */
+body.theme-seepify { --accent-text: var(--seep-accent-text); }
+
+/* --- Base ---------------------------------------------------------------- */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 44rem; margin: 0 auto; padding: 0 16px 5rem; }
+img { max-width: 100%; height: auto; }
+code { overflow-wrap: anywhere; font-size: .92em; }
+a { color: var(--accent-text); }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--accent-text); outline-offset: 2px; border-radius: 4px; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* --- Header and nav ------------------------------------------------------ */
+.site-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1.25rem;
+  padding: 1.75rem 0 1rem;
+  border-bottom: 3px solid var(--marigold);
+  margin-bottom: 2.5rem;
+}
+.brand {
+  display: flex; align-items: center; gap: .6rem;
+  font-weight: 800; letter-spacing: .12em; font-size: .85rem;
+  color: var(--marigold-deep); text-transform: uppercase;
+  text-decoration: none;
+}
+.nav { display: flex; flex-wrap: wrap; gap: 1rem; margin-left: auto; font-size: .92rem; }
+.nav a { text-decoration: none; }
+.nav a:hover, .nav a[aria-current="page"] { text-decoration: underline; }
+.nav a[aria-current="page"] { font-weight: 700; }
+
+/* --- Hero --------------------------------------------------------------- */
+.hero { margin-bottom: 2.5rem; }
+.hero-art {
+  display: block; width: 104px; height: 104px;
+  border-radius: 22px; margin-bottom: 1.1rem;
+  box-shadow: 0 6px 20px rgba(30, 27, 75, .18);
+}
+h1 { font-size: clamp(1.7rem, 6vw, 2.4rem); line-height: 1.15; margin: 0 0 .5rem; }
+.tagline { font-size: clamp(1.05rem, 3.4vw, 1.25rem); margin: 0 0 1rem; color: var(--ink); }
+.meta { color: var(--muted); font-size: .92rem; margin: 0 0 1.25rem; }
+.kicker {
+  font-weight: 800; letter-spacing: .1em; font-size: .78rem;
+  text-transform: uppercase; color: var(--accent-text); margin: 0 0 .5rem;
+}
+
+/* A felt table for Seepify's hero, drawn in CSS — the app has no artwork to
+   borrow: every card, sound and icon in it is generated at runtime. */
+.hero-felt {
+  background: radial-gradient(circle at 30% 20%, var(--seep-felt-hi), var(--seep-felt-lo) 72%);
+  border: 1px solid var(--seep-gold);
+  border-radius: 18px;
+  padding: 2rem 1.5rem;
+  color: var(--seep-ink-on-felt);
+}
+.hero-felt h1, .hero-felt .tagline { color: var(--seep-ink-on-felt); }
+.hero-felt .kicker { color: var(--seep-gold); }
+.hero-felt .meta { color: #B9CFC4; }
+
+/* --- Buttons ------------------------------------------------------------ */
+.cta { display: flex; flex-wrap: wrap; gap: .75rem; margin: 0; }
+.btn, .btn-ghost {
+  display: inline-block; padding: .7rem 1.15rem;
+  border-radius: 10px; font-weight: 700; font-size: .98rem;
+  text-decoration: none; border: 2px solid transparent;
+}
+.btn { background: var(--cta-bg); color: var(--cta-fg); }
+.btn:hover { background: var(--marigold-deep); color: #FFFBF2; }
+.btn-ghost { border-color: currentColor; color: var(--accent-text); background: transparent; }
+.btn-ghost:hover { background: var(--shade); }
+
+/* --- Badges ------------------------------------------------------------- */
+.badge {
+  display: inline-block; padding: .25rem .6rem; border-radius: 999px;
+  font-size: .76rem; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; border: 1px solid currentColor;
+  color: var(--accent-text);
+}
+/* Gold is legible on the felt hero but not on the cream page, so the badge
+   uses the darker gold everywhere except inside .hero-felt. */
+.badge-wip { color: var(--seep-accent-text); background: rgba(200, 162, 74, .12); }
+.hero-felt .badge-wip { color: var(--seep-gold); background: rgba(200, 162, 74, .18); }
+
+/* --- Sections and cards ------------------------------------------------- */
+h2 {
+  font-size: 1.25rem; margin: 2.5rem 0 .75rem;
+  padding-top: 1.5rem; border-top: 1px solid var(--rule);
+}
+h2:first-of-type { border-top: 0; padding-top: 0; }
+h3 { font-size: 1.05rem; margin: 0 0 .35rem; }
+.lede {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--marigold);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  margin: 0 0 1rem;
+}
+.lede strong { font-size: 1.05rem; }
+.cards {
+  display: grid; gap: 1rem; margin: 1.25rem 0 0;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+.card {
+  background: var(--card); border: 1px solid var(--rule);
+  border-radius: 14px; padding: 1.25rem;
+}
+.card p:last-child { margin-bottom: 0; }
+.card-icon { width: 64px; height: 64px; border-radius: 14px; margin-bottom: .75rem; }
+.card h3 a { text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.feature { list-style: none; padding: 0; margin: 1rem 0 0; }
+.feature li {
+  padding: .6rem 0 .6rem 1.6rem; border-bottom: 1px solid var(--rule);
+  position: relative;
+}
+.feature li:last-child { border-bottom: 0; }
+.feature li::before {
+  content: "•"; position: absolute; left: .3rem;
+  color: var(--marigold-deep); font-weight: 700;
+}
+.note {
+  color: var(--muted); font-size: .95rem;
+  border-left: 3px solid var(--rule); padding-left: .9rem; margin: 1rem 0;
+}
+
+/* --- Screenshot strip --------------------------------------------------- */
+/* One swipeable row on a phone, a grid once there is room. */
+.shots {
+  display: grid; gap: 1rem; margin: 1.25rem 0 0; padding: 0 0 .5rem;
+  grid-auto-flow: column; grid-auto-columns: 62%;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+}
+.shots figure { margin: 0; scroll-snap-align: start; }
+.shots img {
+  display: block; width: 100%; border-radius: 12px;
+  border: 1px solid var(--rule); background: var(--card);
+}
+.figcap { color: var(--muted); font-size: .86rem; margin: .5rem 0 0; }
+@media (min-width: 40rem) {
+  .shots {
+    grid-auto-flow: row; grid-auto-columns: auto;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-x: visible;
+  }
+}
+
+/* --- FAQ ---------------------------------------------------------------- */
+.faq { border-bottom: 1px solid var(--rule); padding: .85rem 0; }
+.faq summary { cursor: pointer; font-weight: 700; }
+.faq summary::marker { color: var(--marigold-deep); }
+.faq p { margin: .6rem 0 .2rem; }
+
+/* --- Footer ------------------------------------------------------------- */
+footer {
+  margin-top: 3rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted); font-size: .9rem;
+}
+footer a { color: var(--accent-text); }
+footer p { margin: .4rem 0; }

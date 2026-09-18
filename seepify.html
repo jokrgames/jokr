@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--
+  Seepify — in development. Nothing on this page may look like a download:
+  there is no release, no beta and no APK, so there is no CTA at all, only a
+  plain sentence saying so.
+
+  Seepify ships zero bundled artwork — cards, felt, icon and every sound are
+  generated in code — so there are no screenshots to show. The .shots block
+  near the bottom is commented out and ready: put 1080x1920 PNGs in
+  assets/seepify/shots/, run the sips line in README.md, uncomment it.
+
+  Claims here are taken from ../seepify/PRD.md and ../seepify/docs/.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seepify &mdash; Seep for Android, in development &middot; Jokr Games</title>
+<meta name="description" content="Seep (Sweep) for Android: you and an AI partner against two opponents, fully offline, with rules sourced to pagat.com. In development.">
+<link rel="canonical" href="https://jokrgames.github.io/jokr/seepify.html">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="favicon-180.png">
+<meta name="theme-color" content="#FDF6E8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#061713" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jokr Games">
+<meta property="og:title" content="Seepify — Seep for Android">
+<meta property="og:description" content="The Indian four-player partnership fishing game, played properly: an AI partner, correct rules, entirely offline. In development.">
+<meta property="og:url" content="https://jokrgames.github.io/jokr/seepify.html">
+<meta property="og:image" content="https://jokrgames.github.io/jokr/assets/og/og-seepify.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="theme-seepify">
+<div class="wrap">
+
+<header class="site-head">
+  <a class="brand" href="index.html"><span aria-hidden="true">&#127183;</span> Jokr Games</a>
+  <nav class="nav" aria-label="Site">
+    <a href="index.html">Home</a>
+    <a href="jokr.html">JOKR</a>
+    <a href="seepify.html" aria-current="page">Seepify</a>
+    <a href="privacy-policy.html">Privacy</a>
+  </nav>
+</header>
+
+<div class="hero hero-felt">
+  <img class="hero-art" src="assets/seepify/icon-256.png" width="104" height="104"
+       alt="The Seepify app icon: three cards on green felt under a gold wordmark.">
+  <p class="kicker">In development</p>
+  <h1>Seepify</h1>
+  <p class="tagline">Seep &middot; Sweep &middot; &#2360;&#2368;&#2346;</p>
+  <p class="meta"><span class="badge badge-wip">Not released yet</span></p>
+  <p class="meta">No download yet. There is no beta, no sign-up list and no APK
+  to install &mdash; this page is here so there is something honest to point at
+  while it is being built.</p>
+</div>
+
+<p class="lede"><strong>The Indian four-player partnership fishing game, played
+properly.</strong> You take the South seat with an AI partner across from you,
+against East and West, and play full matches &mdash; blind bid, compulsory
+capture, houses, seeps, baazis &mdash; on your own phone, offline.</p>
+
+<h2>Why it exists</h2>
+<p>Seep is played everywhere and yet there is no good way to simply <em>play a
+hand</em> on your own phone. The digital versions are online-first: accounts,
+coins, entry fees, matchmaking, ads. Seepify is the opposite of that. It is one
+app that deals you in, plays by the real rules, and asks nothing of you.</p>
+<p>It is also built for the half of the table that is still learning. The rules
+are intricate &mdash; compulsory capture, cemented houses, the partner exception
+&mdash; so the app surfaces them while you play rather than in a manual you
+never open.</p>
+
+<h2>What&rsquo;s being built</h2>
+<div class="cards">
+  <div class="card">
+    <h3>Rules that are correct</h3>
+    <p>Every rule is sourced to a sentence on pagat.com and pinned by a test, so
+    the awkward cases &mdash; cementing and breaking houses, the partner
+    exception, seeps at 50/25/0 &mdash; behave the way the game actually does.</p>
+  </div>
+  <div class="card">
+    <h3>A table that shows its working</h3>
+    <p>Tap a card and everything on the floor it can legally take lights up;
+    what it can&rsquo;t is dimmed. Collect, Combine and Throw are offered per
+    card, each variant named with the exact cards &mdash; and when an action
+    isn&rsquo;t available, the table says why instead of the button doing
+    nothing.</p>
+  </div>
+  <div class="card">
+    <h3>A partner worth having</h3>
+    <p>Three difficulty levels, and the default plays sensibly: it does not hand
+    the opposition easy seeps, it does not break its own partner&rsquo;s house,
+    and it does not take what its partner is set up to take.</p>
+  </div>
+  <div class="card">
+    <h3>Drawn in code</h3>
+    <p>Not a single bundled asset. The cards, the felt, the launcher icon and
+    every sound are generated at runtime, which is why the whole app is a small
+    download and why it looks the same on every screen.</p>
+  </div>
+</div>
+
+<h2>Offline, absolutely</h2>
+<p>This is the strongest claim either of our games can make. The release build
+declares <strong>no Android <code>INTERNET</code> permission at all</strong>
+&mdash; not an unused one, none. The app is not able to reach a network, so
+nothing about you can leave your phone even in principle.</p>
+<ul class="feature">
+  <li>No accounts, no sign-in, no connection.</li>
+  <li>No analytics, no telemetry, no identifiers.</li>
+  <li>No coins, entry fees, ads or purchases.</li>
+  <li>One save slot on your device for the match in progress, and your settings.
+    See the <a href="seepify-privacy.html">privacy policy</a>.</li>
+</ul>
+<p class="meta">Android &middot; <code>com.seepify.seepify</code> &middot;
+version 0.1.0</p>
+
+<!--
+  Screenshots go here once there are any. Drop 1080x1920 PNGs into
+  assets/seepify/shots/, downscale them with the sips line in README.md, then
+  uncomment this block and write a real caption and alt text for each.
+
+<h2>A look at the table</h2>
+<div class="shots">
+  <figure>
+    <img src="assets/seepify/shots/01_table.jpg" width="540" height="960"
+         loading="lazy" decoding="async" alt="">
+    <p class="figcap"></p>
+  </figure>
+</div>
+-->
+
+<h2>Where it stands</h2>
+<p>In development. The engine, the AI and the table are built and under test;
+what is left is the polish that decides whether a card game is pleasant to hold.
+There is no release date announced, and no public source repository for this one
+yet.</p>
+<p class="note">Nothing on this page is a download. When there is something to
+install, it will be linked from here and from the
+<a href="index.html">Jokr Games home page</a>, and nowhere else.</p>
+
+<h2>Get in touch</h2>
+<p>If you play Seep and want to argue about a rule before it ships, that is
+genuinely useful: <a href="mailto:jokr.gamify@gmail.com">jokr.gamify@gmail.com</a></p>
+
+<footer>
+  <p>Seepify &middot; Seep for Android. Offline, no accounts, no data
+  collected.</p>
+  <p><a href="index.html">Jokr Games</a> &middot;
+     <a href="seepify-privacy.html">Privacy policy</a> &middot;
+     <a href="mailto:jokr.gamify@gmail.com">jokr.gamify@gmail.com</a></p>
+</footer>
+
+</div>
+</body>
+</html>

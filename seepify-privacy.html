@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--
+  The hosted privacy policy for Seepify, for the URL the Play Console asks for.
+
+  Standalone on purpose, like privacy-policy.html: no build step, no shared
+  stylesheet, no fonts or scripts fetched from anywhere, so it renders the same
+  wherever it is dropped — including straight into the Seepify repo if that is
+  easier than linking to this host.
+
+  The facts here come from the app itself, not from marketing copy:
+    - app/android/app/src/main/AndroidManifest.xml declares NO permissions.
+      Only the debug and profile manifests add INTERNET, which is Flutter's
+      own tooling requirement and is not in a release build.
+    - app/lib/ui/storage.dart writes exactly one shared_preferences key,
+      "seepify.save.v1", with the fields listed in the table below.
+  If either changes, change this page and the date on it.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy &mdash; Seepify</title>
+<meta name="description" content="Privacy policy for Seepify, the offline Android app for Seep. No data collected, and no network permission at all.">
+<style>
+  :root {
+    --felt: #1D7A5B;
+    --felt-deep: #11563F;
+    --gold: #C8A24A;
+    --gold-deep: #8C6A20;
+    --ink: #1f2a25;
+    --muted: #55655d;
+    --rule: #d8e3dc;
+    --page: #F4F7F3;
+    --card: #FFFFFF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #F4F1E6;
+      --muted: #8EA79C;
+      --rule: #234b3c;
+      --page: #061713;
+      --card: #12362A;
+      --gold-deep: #F2DC9B;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #F4F1E6;
+    --muted: #8EA79C;
+    --rule: #234b3c;
+    --page: #061713;
+    --card: #12362A;
+    --gold-deep: #F2DC9B;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 44rem; margin: 0 auto; padding: 0 16px 5rem; }
+
+  header {
+    padding: 3rem 0 2rem;
+    border-bottom: 3px solid var(--felt);
+    margin-bottom: 2.5rem;
+  }
+  .brand {
+    display: flex; align-items: center; gap: .6rem;
+    font-weight: 800; letter-spacing: .12em; font-size: .85rem;
+    color: var(--gold-deep); text-transform: uppercase;
+  }
+  h1 { font-size: clamp(1.7rem, 6vw, 2.4rem); line-height: 1.15; margin: .6rem 0 .4rem; }
+  .updated { color: var(--muted); font-size: .95rem; margin: 0; }
+
+  h2 {
+    font-size: 1.25rem; margin: 2.5rem 0 .75rem;
+    padding-top: 1.5rem; border-top: 1px solid var(--rule);
+  }
+  h2:first-of-type { border-top: 0; padding-top: 0; }
+  p, li { color: var(--ink); }
+  a { color: var(--gold-deep); }
+  code { overflow-wrap: anywhere; font-size: .92em; }
+
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--felt);
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+    margin: 0 0 1rem;
+  }
+  .lede strong { font-size: 1.05rem; }
+
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .96rem; }
+  th, td { text-align: left; padding: .6rem .7rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
+
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand"><span aria-hidden="true">&#127136;</span> Seepify</div>
+  <h1>Privacy policy</h1>
+  <p class="updated">Seepify &middot; <code>com.seepify.seepify</code> &middot;
+  Last updated 19 September 2026</p>
+</header>
+
+<p class="lede"><strong>Seepify does not collect any personal data, and it
+cannot.</strong> The app has no accounts, no sign-in, no analytics, no crash
+reporting, no advertising and no purchases &mdash; and it holds no network
+permission at all, so nothing you do in it can be sent anywhere.</p>
+
+<h2>What the app sends</h2>
+<p><strong>Nothing, ever.</strong> The released Android app does not declare the
+<code>INTERNET</code> permission. This is not an unused permission left in place
+for later: it is absent, which means Android itself will not let the app open a
+network connection. Seepify plays entirely on your device, against opponents
+that run on your device.</p>
+
+<h2>What the app stores, and where</h2>
+<p>Everything Seepify saves stays on your device, in the app&rsquo;s own private
+storage, and is deleted when you uninstall the app. It is one saved slot,
+holding the match you are in the middle of and how you like to play. Nothing
+here is transmitted.</p>
+<table>
+  <thead><tr><th>What</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td>The match in progress &mdash; the hands, the floor, the score</td><td>So you can close the app mid-deal and pick it up where you left it</td></tr>
+    <tr><td>Difficulty and game speed</td><td>So the app opens the way you left it</td></tr>
+    <tr><td>Sound setting</td><td>Covers sound and haptics together</td></tr>
+    <tr><td>Practice mode setting</td><td>Whether the floor is shown before the bid</td></tr>
+  </tbody>
+</table>
+<p>There is no display name, no profile, no avatar and no identifier of any kind
+in there &mdash; the app never asks who you are. If storage is unavailable on
+your device, the game still plays; it simply will not resume a match.</p>
+
+<h2>Advertising, analytics and payments</h2>
+<p>There are none. Seepify contains no advertising SDK, no analytics or
+telemetry SDK, no crash-reporting SDK, and no in-app purchases or other
+payments. There is no virtual currency, no coins, no entry fee, no wagering and
+no real-money element of any kind.</p>
+
+<h2>Children</h2>
+<p>Seepify is a card game suitable for all ages. Because it collects no personal
+data from anyone, it collects none from children either.</p>
+
+<h2>Your choices</h2>
+<ul>
+  <li><strong>Clearing what is stored:</strong> uninstalling the app removes
+    everything it has saved. Android&rsquo;s <em>Settings &rarr; Apps &rarr;
+    Seepify &rarr; Storage &rarr; Clear data</em> does the same without
+    uninstalling.</li>
+  <li><strong>Requesting deletion:</strong> there is nothing held about you to
+    delete &mdash; no account exists and no data leaves your device.</li>
+</ul>
+
+<h2>Changes to this policy</h2>
+<p>If this policy changes, the date at the top of this page changes with it, and
+the updated policy is published at the same address.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy:
+<a href="mailto:jokr.gamify@gmail.com">jokr.gamify@gmail.com</a></p>
+
+<footer>Seepify &mdash; Seep for Android &middot; Offline. No data collected.</footer>
+
+</div>
+</body>
+</html>
