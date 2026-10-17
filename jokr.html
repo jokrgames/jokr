@@ -3,10 +3,10 @@
   JOKR — Joker Kiske Paas?  The copy here is adapted from the store listing in
   ../jokerkiskepaas/store/LISTING.md, and follows its two rules:
 
-    1. Online play is NOT advertised anywhere on this page. It is built but
-       switched off (kOnlinePlayEnabled = false in the app) and there is no
-       hosted server, so claiming it would be a misleading store listing. The
-       FAQ says plainly that it is not switched on yet; that is the only mention.
+    1. Describe only what the app does. From versionCode 17 online play is on,
+       against the production server over HTTPS, with optional Google sign-in
+       (jokerkiskepaas D-052, D-044); Pass & Play is hidden in the app, so it
+       is not described here.
     2. The word "free" does not appear. Play shows the price itself, and
        promotional words in metadata are against its policy.
 
@@ -18,7 +18,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JOKR &mdash; Joker Kiske Paas? &middot; Jokr Games</title>
-<meta name="description" content="Old Maid for 4-7 players on one phone, or solo against the bots. Pass and play with a privacy curtain, two rule sets, no ads and no sign-in.">
+<meta name="description" content="Old Maid for 4-7 players: online with friends or strangers, or against smart AI bots. Three rule sets, no ads, no in-app purchases; signing in is optional.">
 <link rel="canonical" href="https://jokrgames.github.io/jokr/jokr.html">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -28,7 +28,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jokr Games">
 <meta property="og:title" content="JOKR — Joker Kiske Paas?">
-<meta property="og:description" content="Pair up, pass it on — and don't get caught holding the Joker. Old Maid for 4-7 players on one phone, or solo against the bots.">
+<meta property="og:description" content="Pair up, pass it on — and don't get caught holding the Joker. Old Maid for 4-7 players: online with friends or strangers, or against smart AI bots.">
 <meta property="og:url" content="https://jokrgames.github.io/jokr/jokr.html">
 <meta property="og:image" content="https://jokrgames.github.io/jokr/assets/og/og-jokr.jpg">
 <meta property="og:image:width" content="1200">
@@ -72,24 +72,27 @@ holding the Joker at the end loses.</p>
 <p>It is Old Maid: the game half the subcontinent grew up playing on the floor
 with a borrowed deck, built properly for a phone.</p>
 
-<h2>Two ways to play</h2>
+<h2>Three ways to play</h2>
 <div class="cards">
   <div class="card">
-    <h3>Pass &amp; Play</h3>
-    <p>4 to 7 people, one phone, handed around the room. A privacy curtain
-    covers every hand-off, so nobody sees a hand that isn&rsquo;t theirs. This
-    is the one to play when everyone is already sitting together.</p>
+    <h3>Play with Friends</h3>
+    <p>Make a private room and share the code &mdash; or send it on WhatsApp,
+    where one tap brings your friends to the table. Wherever they are.</p>
   </div>
   <div class="card">
-    <h3>Solo vs Bots</h3>
-    <p>You against the computer, any time, no one else needed. Three difficulty
-    levels, and Hard genuinely is: those bots track where the Joker probably is,
-    weigh their odds of making a pair, and will avoid knocking you out while
-    you&rsquo;re holding it.</p>
+    <h3>Play Online</h3>
+    <p>Pick a mode and get matched with whoever is looking for a game, with a
+    live count of who is waiting. Smart AI bots fill any empty seats.</p>
+  </div>
+  <div class="card">
+    <h3>Play with AI</h3>
+    <p>You against smart AI bots, any time, no connection needed. They track
+    where the Joker probably is, weigh their odds of a pair, and see only what
+    you see.</p>
   </div>
 </div>
 
-<h2>Two sets of rules</h2>
+<h2>Three sets of rules</h2>
 <div class="cards">
   <div class="card">
     <h3>Classic</h3>
@@ -101,6 +104,11 @@ with a borrowed deck, built properly for a phone.</p>
     looks nervous, who is down to two cards, and who you&rsquo;d rather not hand
     the Joker to.</p>
   </div>
+  <div class="card">
+    <h3>Bluff</h3>
+    <p>Free Pick, and you may keep one pair hidden. Look like a safe bet, and
+    let them take the Joker off your hands.</p>
+  </div>
 </div>
 
 <h2>Built to be pleasant</h2>
@@ -110,12 +118,15 @@ with a borrowed deck, built properly for a phone.</p>
     prefer.</li>
   <li><strong>The table narrates itself.</strong> &ldquo;Rohan took a card from
     Meera&rdquo; &mdash; you always know what just happened, and to whom.</li>
-  <li><strong>Light and dark themes,</strong> and it follows your phone&rsquo;s
-    setting if you&rsquo;d rather not choose.</li>
+  <li><strong>Eight table colours</strong> &mdash; one tap on the palette tries
+    the next.</li>
+  <li><strong>Emotes and table talk</strong> in your region&rsquo;s words and your
+    generation&rsquo;s vibe.</li>
   <li><strong>A rules screen built in,</strong> so nobody has to remember how
     pairs work.</li>
-  <li><strong>It keeps your record:</strong> games played, games survived, best
-    safe streak.</li>
+  <li><strong>Your profile keeps your record:</strong> games played and survived,
+    by mode and by type, and your best safe streak &mdash; on every phone, if
+    you sign in.</li>
 </ul>
 
 <h2>A look at the table</h2>
@@ -139,12 +150,6 @@ with a borrowed deck, built properly for a phone.</p>
     <p class="figcap">&ldquo;You have the Joker!&rdquo;</p>
   </figure>
   <figure>
-    <img src="assets/jokr/shots/05_curtain.jpg" width="540" height="960"
-         loading="lazy" decoding="async"
-         alt="A full-screen curtain covering the hand while the phone is passed on.">
-    <p class="figcap">The pass-and-play privacy curtain.</p>
-  </figure>
-  <figure>
     <img src="assets/jokr/shots/06_gameover.jpg" width="540" height="960"
          loading="lazy" decoding="async"
          alt="The end-of-game screen naming the player left holding the Joker.">
@@ -157,10 +162,12 @@ with a borrowed deck, built properly for a phone.</p>
   <li>No ads.</li>
   <li>No in-app purchases, no virtual currency, no wagering, no real-money
     element of any kind.</li>
-  <li>No sign-in and no account &mdash; nothing to create.</li>
-  <li>No data collected about you. See the
-    <a href="privacy-policy.html">privacy policy</a>.</li>
-  <li>No internet connection needed.</li>
+  <li>No analytics, no crash reporting, no advertising identifiers.</li>
+  <li>No account needed &mdash; signing in with Google is optional, and only
+    keeps your name and stats. See the <a href="privacy-policy.html">privacy
+    policy</a>, and <a href="delete-account/">delete your account</a> any
+    time.</li>
+  <li>No connection needed to play against the AI.</li>
 </ul>
 
 <h2>Questions</h2>
@@ -174,15 +181,14 @@ with a borrowed deck, built properly for a phone.</p>
 
 <details class="faq">
   <summary>How many people can play?</summary>
-  <p>Four to seven in Pass &amp; Play, on one phone. Solo vs Bots fills the
-  other seats for you.</p>
+  <p>Four to seven. Online, a table of four starts as soon as four are waiting,
+  and AI bots fill any empty seats after a short wait.</p>
 </details>
 
 <details class="faq">
   <summary>Does it need an internet connection?</summary>
-  <p>No. This version plays entirely on your device &mdash; passing one phone
-  around, or against the built-in computer opponents. It makes no network
-  requests at all.</p>
+  <p>Only for online play. Play with AI runs entirely on your phone; Play with
+  Friends and Play Online connect to our game server.</p>
 </details>
 
 <details class="faq">
@@ -192,10 +198,8 @@ with a borrowed deck, built properly for a phone.</p>
 
 <details class="faq">
   <summary>Can I play with friends who aren&rsquo;t in the room?</summary>
-  <p>Not yet. Playing over the internet is built but <em>not switched on</em> in
-  the released app, and there is no server running for it &mdash; the in-app
-  screen says as much. If that changes, it will be announced here and the
-  privacy policy will be updated before it ships.</p>
+  <p>Yes. Choose Play with Friends, make a room, and share the code or send it
+  on WhatsApp. Your friends join from wherever they are.</p>
 </details>
 
 <footer>
