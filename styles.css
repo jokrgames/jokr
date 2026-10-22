@@ -240,3 +240,11 @@ footer {
 }
 footer a { color: var(--accent-text); }
 footer p { margin: .4rem 0; }
+
+/* --- How-to-play video -------------------------------------------------- */
+/* Portrait, like the phone it was recorded on; never taller than the screen. */
+.video {
+  display: block; margin: 1.25rem auto 0;
+  width: min(100%, 22rem); max-height: 80vh; aspect-ratio: 720 / 1560;
+  border-radius: 16px; border: 1px solid var(--rule); background: #15122f;
+}
